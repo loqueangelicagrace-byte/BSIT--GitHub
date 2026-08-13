@@ -1,26 +1,26 @@
 # Laboratory Activity 2: Build the Cloud Infrastructure Blueprint
 
 ## Mission Overview
-This project simulates the planning and assessment phase of a cloud migration project for CloudNova Technologies[cite: 1]. It focuses on inspecting Linux environment infrastructure, mapping core components, comparing leading cloud providers, and producing professional technical documentation[cite: 1].
+This project simulates the planning and assessment phase of a cloud migration project for CloudNova Technologies. It focuses on inspecting Linux environment infrastructure, mapping core components, comparing leading cloud providers, and producing professional technical documentation.
 
 ## Objectives
-* Identify and explain the primary components of cloud infrastructure[cite: 1].
-* Inspect Linux hardware and software resources via terminal commands[cite: 1].
-* Compare equivalent core services across AWS, Azure, and GCP[cite: 1].
-* Create architectural diagrams representing cloud infrastructure[cite: 1].
-* Publish structured technical documentation using Markdown[cite: 1].
+* Identify and explain the primary components of cloud infrastructure.
+* Inspect Linux hardware and software resources via terminal commands.
+* Compare equivalent core services across AWS, Azure, and GCP.
+* Create architectural diagrams representing cloud infrastructure.
+* Publish structured technical documentation using Markdown.
 
 ## Cloud Infrastructure Components
-* **Compute:** Virtual processing resources (vCPU, RAM)[cite: 1].
-* **Storage:** Block and object storage file systems (`/dev/sda1`)[cite: 1].
-* **Networking:** Virtual interfaces and IP routing (`eth0`)[cite: 1].
-* **Identity:** Systems managing access permissions and resource security[cite: 1].
+* **Compute:** Virtual processing resources (vCPU, RAM).
+* **Storage:** Block and object storage file systems (`/dev/sda1`).
+* **Networking:** Virtual interfaces and IP routing (`eth0`).
+* **Identity:** Systems managing access permissions and resource security.
 
 ## Tools Used
-* **Terminal Environment:** KillerCoda Linux Playground[cite: 1]
-* **Version Control:** Git & GitHub[cite: 1]
-* **Documentation:** Markdown[cite: 1]
-* **Diagramming:** Draw.io / Excalidraw[cite: 1]
+* **Terminal Environment:** KillerCoda Linux Playground
+* **Version Control:** Git & GitHub
+* **Documentation:** Markdown
+* **Diagramming:** Draw.io / Excalidraw
 
 ## Linux Commands Executed
 * `uname -r` & `cat /etc/os-release` (Kernel & OS identification)
