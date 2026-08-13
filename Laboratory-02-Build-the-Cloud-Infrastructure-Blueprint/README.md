@@ -20,7 +20,7 @@ This project simulates the planning and assessment phase of a cloud migration pr
 * **Terminal Environment:** KillerCoda Linux Playground
 * **Version Control:** Git & GitHub
 * **Documentation:** Markdown
-* **Diagramming:** Draw.io / Excalidraw
+* **Diagramming:** Figma 
 
 ## Linux Commands Executed
 * `uname -r` & `cat /etc/os-release` (Kernel & OS identification)
