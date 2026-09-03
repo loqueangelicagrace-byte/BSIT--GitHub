@@ -1,0 +1,69 @@
+# AWS Research
+
+## 1. Brief Overview
+
+Amazon Web Services (AWS) is a cloud computing platform provided by Amazon. It was launched in 2006 and provides cloud services for computing, storage, databases, networking, security, analytics, artificial intelligence, and many other purposes. AWS allows organizations to use IT resources on demand without having to purchase and maintain all of their own physical infrastructure.
+
+## 2. Global Infrastructure
+
+AWS has a large global infrastructure made up of geographic Regions and Availability Zones. Regions are separate geographic areas, while Availability Zones are isolated locations within Regions that help organizations build applications with high availability and reliability. AWS also uses edge locations to deliver content closer to users.
+
+AWS continues to expand its infrastructure around the world, allowing organizations to deploy applications closer to their customers and choose locations that meet their performance and data requirements.
+
+## 3. AWS Management Console
+
+The AWS Management Console is a web-based interface used to access and manage AWS services. Users can search for services, create and manage cloud resources, monitor resources, manage users and permissions, and view billing information. The console also provides access to AWS CloudShell, which allows users to run AWS command-line commands from a browser.
+
+## 4. Four Core AWS Services
+
+### 1. Amazon EC2
+
+Amazon Elastic Compute Cloud (EC2) provides virtual servers that organizations can use to run applications and workloads in the cloud.
+
+### 2. Amazon S3
+
+Amazon Simple Storage Service (S3) provides scalable object storage for storing files, data, backups, and other digital information.
+
+### 3. Amazon RDS
+
+Amazon Relational Database Service (RDS) provides managed relational databases. It helps organizations set up, operate, and scale relational databases without managing all of the underlying infrastructure.
+
+### 4. Amazon VPC
+
+Amazon Virtual Private Cloud (VPC) allows organizations to create an isolated virtual network in AWS. It provides control over networking resources such as IP addresses, subnets, and routing.
+
+AWS provides services across many categories, including compute, storage, databases, networking, security, and artificial intelligence.
+
+## 5. Three Advantages of AWS
+
+### 1. Scalability
+
+AWS allows organizations to increase or decrease cloud resources according to their needs. This is useful for applications that experience changing levels of traffic.
+
+### 2. Global Availability
+
+AWS provides infrastructure in many geographic locations around the world. Organizations can deploy applications in appropriate Regions and Availability Zones to improve availability and performance.
+
+### 3. Wide Range of Services
+
+AWS provides a broad selection of cloud services covering areas such as computing, storage, databases, networking, security, analytics, and AI. This allows organizations to combine different services to build complete cloud solutions.
+
+## 6. Typical Enterprise Use Cases
+
+AWS is commonly used by businesses and organizations for:
+
+* Hosting websites and web applications
+* Storing and backing up company data
+* Running databases
+* Developing and testing applications
+* Data analytics
+* Artificial intelligence and machine learning
+* E-commerce applications
+* Disaster recovery
+* Enterprise application modernization
+
+AWS serves startups, enterprises, government organizations, and other types of customers.
+
+## 7. Observation
+
+After exploring AWS, I observed that it offers many different cloud services that can be used for various business and technology needs. I noticed that the AWS Management Console provides a convenient way to access and manage these services. I also observed that AWS focuses on scalability, global availability, and flexibility, which can help organizations handle different workloads. Overall, AWS is a useful cloud platform for businesses that need reliable and scalable cloud resources.
