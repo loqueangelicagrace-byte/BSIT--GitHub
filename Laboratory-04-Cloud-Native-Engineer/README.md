@@ -29,7 +29,7 @@ docker --version
 Used to check the installed Docker version.
 
 ```bash
-sudo systemctl status docker
+docker info
 ```
 
 Used to check the current status of the Docker service.
