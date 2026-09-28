@@ -1,39 +1,156 @@
-# MinIO Deployment Documentation
+# MinIO Deployment
 
-## Docker Command Used
+This document contains the technical documentation for deploying an S3-compatible object storage server using MinIO and Docker.
+
+## EXACT DOCKER COMMAND USED
+
+The MinIO storage server was deployed using the following Docker command:
 
 ```bash
-docker run -d -p 9000:9000 -p 9001:9001 --name minio-server \
-  -e "MINIO_ROOT_USER=cloudadmin" \
-  -e "MINIO_ROOT_PASSWORD=CloudNova2026!" \
-  -e "MINIO_BROWSER=on" \
-  bitnamilegacy/minio:2025.7.23-debian-12-r5
+docker run -d --name minio-server -p 9000:9000 -p 9001:9001 -e MINIO_ROOT_USER=cloudadmin -e MINIO_ROOT_PASSWORD=CloudNova2026! quay.io/minio/minio server /data --console-address ":9001"
 ```
 
-> The original lab sheet called for `minio/minio`, but that image stopped being freely available on Docker Hub as of October 2025. I switched to `bitnamilegacy/minio` instead, which meant adding `MINIO_BROWSER=on`. Without it, the web console does not start properly and may result in a 502 error when accessing it.
+The `-d` flag runs the container in detached mode.
 
-## Web Console Port
+The `--name minio-server` gives the container the name `minio-server`.
 
-Port **9001** is where the MinIO web console is accessed.
+The `-p` flags map the MinIO ports from the container to the host machine.
 
-It is separate from port **9000**, which handles the actual S3 API traffic. Port **9001** is used when accessing the visual web dashboard through a browser.
+- Port `9000` maps the MinIO API.
+- Port `9001` maps the MinIO Web Console.
 
-### Example
+## WEB CONSOLE PORT
+
+The MinIO Web Console was accessed using port `9001`.
+
+Port `9001` is used for the MinIO Web Console, while port `9000` is used for the MinIO API.
+
+The Web Console can be accessed through:
 
 ```text
 http://localhost:9001
 ```
 
-## Bucket Created
+## BUCKET CREATED
 
-**Bucket name:** `client-photos`
+The bucket created in the MinIO Web Console was:
 
-The `client-photos` bucket is used to store the client's photos for this proof-of-concept deployment.
+```text
+client-photos
+```
 
-## What the `-e` Flags Actually Do
+A sample file was uploaded to the `client-photos` bucket to verify that the object storage was working properly.
 
-The `-e` options define environment variables that configure the MinIO container.
+The bucket was used to demonstrate that MinIO can store and manage objects through its Web Console.
 
-* `MINIO_ROOT_USER` — sets the administrator username used to log in to the MinIO console.
-* `MINIO_ROOT_PASSWORD` — sets the administrator password.
-* `MINIO_BROWSER` — enables or disables the MinIO web console. It is set to `on` to make the web console available.
+## ENVIRONMENT VARIABLES
+
+The `-e` flags were used to set environment variables inside the MinIO container.
+
+### Root Username
+
+The following environment variable:
+
+```bash
+-e MINIO_ROOT_USER=cloudadmin
+```
+
+sets `cloudadmin` as the MinIO root username.
+
+### Root Password
+
+The following environment variable:
+
+```bash
+-e MINIO_ROOT_PASSWORD=CloudNova2026!
+```
+
+sets the password for the MinIO root account.
+
+These environment variables configure the administrator login credentials when the MinIO container is started.
+
+## DOCKER PORT MAPPING
+
+The Docker command uses two port mappings:
+
+```text
+9000:9000
+9001:9001
+```
+
+The first port number represents the port on the host machine, while the second port number represents the port inside the MinIO container.
+
+| Host Port | Container Port | Purpose |
+|-----------|----------------|---------|
+| 9000 | 9000 | MinIO API |
+| 9001 | 9001 | MinIO Web Console |
+
+## MINIO CONTAINER
+
+The Docker container was named:
+
+```text
+minio-server
+```
+
+The container name was specified using:
+
+```bash
+--name minio-server
+```
+
+To check if the MinIO container is running, use:
+
+```bash
+docker ps
+```
+
+The output should show the `minio-server` container with ports `9000` and `9001` mapped to the host machine.
+
+## VERIFYING THE DEPLOYMENT
+
+The MinIO deployment can be verified by checking the running Docker containers:
+
+```bash
+docker ps
+```
+
+The MinIO Web Console can then be opened in a web browser using:
+
+```text
+http://localhost:9001
+```
+
+Log in using the configured credentials:
+
+```text
+Username: cloudadmin
+Password: CloudNova2026!
+```
+
+After logging in, the `client-photos` bucket should be visible in the MinIO Web Console.
+
+## OBJECT STORAGE TEST
+
+To verify that MinIO object storage is working correctly, the following steps were performed:
+
+1. Opened the MinIO Web Console.
+2. Logged in using the configured root credentials.
+3. Created a bucket named `client-photos`.
+4. Opened the `client-photos` bucket.
+5. Uploaded a sample file.
+6. Verified that the uploaded file appeared inside the bucket.
+
+This confirms that the MinIO server was successfully deployed and that objects can be stored using the MinIO Web Console.
+
+## SUMMARY
+
+MinIO was successfully deployed as an S3-compatible object storage server using Docker.
+
+The deployment used the `quay.io/minio/minio` image and created a container named `minio-server`.
+
+The MinIO Web Console was accessed through port `9001`, while port `9000` was used for the MinIO API.
+
+A bucket named `client-photos` was created, and a sample file was uploaded to verify that the object storage functionality was working properly.
+
+The administrator credentials were configured using the `MINIO_ROOT_USER` and `MINIO_ROOT_PASSWORD` environment variables.
